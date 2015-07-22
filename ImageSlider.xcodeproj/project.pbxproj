@@ -20,7 +20,6 @@
 		80049AF91B5E5EB6005A7305 /* wallpaper-hd-3151.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 80049AF51B5E5EB6005A7305 /* wallpaper-hd-3151.jpg */; };
 		809A2F631B5F801C004F0A3F /* next.png in Resources */ = {isa = PBXBuildFile; fileRef = 809A2F611B5F801C004F0A3F /* next.png */; };
 		809A2F641B5F801C004F0A3F /* previous.png in Resources */ = {isa = PBXBuildFile; fileRef = 809A2F621B5F801C004F0A3F /* previous.png */; };
-		809A2F671B5F869C004F0A3F /* SBSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 809A2F661B5F869C004F0A3F /* SBSlider.m */; };
 		809A2F6A1B5F86C3004F0A3F /* SBSliderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 809A2F691B5F86C3004F0A3F /* SBSliderView.m */; };
 		809A2F6C1B5F86F8004F0A3F /* SBSliderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 809A2F6B1B5F86F8004F0A3F /* SBSliderView.xib */; };
 /* End PBXBuildFile section */
@@ -55,8 +54,6 @@
 		80049AF51B5E5EB6005A7305 /* wallpaper-hd-3151.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "wallpaper-hd-3151.jpg"; path = "Assets/wallpaper-hd-3151.jpg"; sourceTree = "<group>"; };
 		809A2F611B5F801C004F0A3F /* next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = next.png; path = Assets/next.png; sourceTree = "<group>"; };
 		809A2F621B5F801C004F0A3F /* previous.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = previous.png; path = Assets/previous.png; sourceTree = "<group>"; };
-		809A2F651B5F869C004F0A3F /* SBSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBSlider.h; path = SBSlider/SBSlider.h; sourceTree = "<group>"; };
-		809A2F661B5F869C004F0A3F /* SBSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBSlider.m; path = SBSlider/SBSlider.m; sourceTree = "<group>"; };
 		809A2F681B5F86C3004F0A3F /* SBSliderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBSliderView.h; path = SBSlider/SBSliderView.h; sourceTree = "<group>"; };
 		809A2F691B5F86C3004F0A3F /* SBSliderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBSliderView.m; path = SBSlider/SBSliderView.m; sourceTree = "<group>"; };
 		809A2F6B1B5F86F8004F0A3F /* SBSliderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SBSliderView.xib; path = SBSlider/SBSliderView.xib; sourceTree = "<group>"; };
@@ -110,8 +107,6 @@
 				80049AD81B5E54E7005A7305 /* Images.xcassets */,
 				80049ADA1B5E54E7005A7305 /* LaunchScreen.xib */,
 				80049ACB1B5E54E7005A7305 /* Supporting Files */,
-				809A2F651B5F869C004F0A3F /* SBSlider.h */,
-				809A2F661B5F869C004F0A3F /* SBSlider.m */,
 				809A2F681B5F86C3004F0A3F /* SBSliderView.h */,
 				809A2F691B5F86C3004F0A3F /* SBSliderView.m */,
 				809A2F6B1B5F86F8004F0A3F /* SBSliderView.xib */,
@@ -266,7 +261,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				80049AD41B5E54E7005A7305 /* ViewController.m in Sources */,
-				809A2F671B5F869C004F0A3F /* SBSlider.m in Sources */,
 				80049AD11B5E54E7005A7305 /* AppDelegate.m in Sources */,
 				80049ACE1B5E54E7005A7305 /* main.m in Sources */,
 				809A2F6A1B5F86C3004F0A3F /* SBSliderView.m in Sources */,
