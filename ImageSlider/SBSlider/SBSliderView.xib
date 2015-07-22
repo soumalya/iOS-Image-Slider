@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="0Rj-s5-9kF" customClass="SBSliderView">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hG3-F6-aKa">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="300" id="6ju-J2-F4i"/>
+                    </constraints>
+                </scrollView>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="tm5-uH-85i">
+                    <rect key="frame" x="281" y="254" width="39" height="37"/>
+                </pageControl>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="hG3-F6-aKa" firstAttribute="leading" secondItem="0Rj-s5-9kF" secondAttribute="leading" id="ASQ-eA-dx9"/>
+                <constraint firstItem="hG3-F6-aKa" firstAttribute="top" secondItem="0Rj-s5-9kF" secondAttribute="top" id="BvQ-YD-NsI"/>
+                <constraint firstAttribute="trailing" secondItem="hG3-F6-aKa" secondAttribute="trailing" id="YdS-yE-CyS"/>
+                <constraint firstAttribute="centerX" secondItem="tm5-uH-85i" secondAttribute="centerX" id="gbY-v0-dbC"/>
+                <constraint firstItem="tm5-uH-85i" firstAttribute="top" secondItem="0Rj-s5-9kF" secondAttribute="top" constant="254" id="iop-RX-w6E"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="pageIndicator" destination="tm5-uH-85i" id="fZE-mZ-W50"/>
+                <outlet property="sliderMainScroller" destination="hG3-F6-aKa" id="lBB-fQ-ZNC"/>
+            </connections>
+        </view>
+    </objects>
+</document>

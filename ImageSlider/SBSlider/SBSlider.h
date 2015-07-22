@@ -1,14 +1,13 @@
 //
-//  ViewController.h
+//  SBSlider.h
 //  ImageSlider
 //
-//  Created by Soumalya Banerjee on 21/07/15.
+//  Created by Soumalya Banerjee on 22/07/15.
 //  Copyright (c) 2015 Soumalya Banerjee. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface SBSlider : UIScrollView
 
 @end
-

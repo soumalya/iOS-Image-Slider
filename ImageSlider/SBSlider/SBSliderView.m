@@ -1,46 +1,59 @@
 //
-//  ViewController.m
+//  SBSliderView.m
 //  ImageSlider
 //
-//  Created by Soumalya Banerjee on 21/07/15.
+//  Created by Soumalya Banerjee on 22/07/15.
 //  Copyright (c) 2015 Soumalya Banerjee. All rights reserved.
 //
 
-#import "ViewController.h"
-#define _AUTO_SCROLL_ENABLED 1
+#import "SBSliderView.h"
 
-@interface ViewController () {
-    NSMutableArray *imagesArray;
+@implementation SBSliderView {
+    NSArray *imagesArray;
+    BOOL autoSrcollEnabled;
+    
     NSTimer *activeTimer;
-    
-    BOOL _isManual;
 }
 
-@end
-
-@implementation ViewController
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    
-    imagesArray = [[NSMutableArray alloc] initWithObjects:@"Black-Car-HD-Wallpaper.jpg", @"lamborghini_murcielago_superveloce_2-2880x1800.jpg", @"nature-landscape-photography-lanscape-cool-hd-wallpapers-fullscreen-high-resolution.jpg", @"wallpaper-hd-3151.jpg", nil];
-    
-    
-    
+/*
+// Only override drawRect: if you perform custom drawing.
+// An empty implementation adversely affects performance during animation.
+- (void)drawRect:(CGRect)rect {
+    // Drawing code
 }
+*/
 
-- (void)viewDidAppear:(BOOL)animated {
-    
-    [super viewDidAppear:animated];
-    
-    [self createSliderWithImages:imagesArray WithAutoScroll:_AUTO_SCROLL_ENABLED];
-}
+//- (id)initWithFrame:(CGRect)frame
+//{
+//    self = [super initWithFrame:frame];
+//    if (self) {
+//        
+//    }
+//    return self;
+//}
+//
+//- (id)initWithCoder:(NSCoder *)aDecoder {
+//    self = [super initWithCoder:aDecoder];
+//    if(self) {
+//        [self setup];
+//    }
+//    return self;
+//}
+//
+//- (void)setup {
+//    [[NSBundle mainBundle] loadNibNamed:@"SBSliderView" owner:self options:nil];
+////    [self addSubview:self.view];
+//}
 
 #pragma mark - Create Slider with images
 
-- (void)createSliderWithImages:(NSArray *)images WithAutoScroll:(BOOL)isAutoScrollEnabled {
+- (void)createSliderWithImages:(NSArray *)images WithAutoScroll:(BOOL)isAutoScrollEnabled inView:(UIView *)parentView {
+//    self.backgroundColor = [UIColor blackColor];
+    self.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
     
+    imagesArray = [NSArray arrayWithArray:images];
+    autoSrcollEnabled = isAutoScrollEnabled;
+
     _sliderMainScroller.pagingEnabled = YES;
     _sliderMainScroller.delegate = self;
     _pageIndicator.numberOfPages = [imagesArray count];
@@ -106,7 +119,7 @@
         moveToPage = moveToPage % [imagesArray count];
         _pageIndicator.currentPage = moveToPage;
     }
-    if (([imagesArray count] > 1) && (_AUTO_SCROLL_ENABLED)) {
+    if (([imagesArray count] > 1) && (autoSrcollEnabled)) {
         [self startTimerThread];
     }
 }
@@ -142,7 +155,6 @@
 
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     
-    _isManual = YES;
     if (activeTimer) {
         [activeTimer invalidate];
         activeTimer = nil;
@@ -158,18 +170,13 @@
     NSInteger page = (_sliderMainScroller.contentOffset.x + (0.5f * width)) / width;
     NSInteger nextPage = page + 1;
     startX = (CGFloat)nextPage * width;
-//    [_sliderMainScroller scrollRectToVisible:CGRectMake(startX, 0, width, _sliderMainScroller.frame.size.height) animated:YES];
+    //    [_sliderMainScroller scrollRectToVisible:CGRectMake(startX, 0, width, _sliderMainScroller.frame.size.height) animated:YES];
     [_sliderMainScroller setContentOffset:CGPointMake(startX, 0) animated:YES];
 }
 
 -(void)startTimerThread
 {
     activeTimer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(slideImage) userInfo:nil repeats:YES];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end
