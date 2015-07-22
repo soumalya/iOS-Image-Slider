@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2lw-aw-kkG">
+                                <rect key="frame" x="0.0" y="150" width="600" height="300"/>
+                            </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Cpc-ok-HtI">
+                                <rect key="frame" x="281" y="402" width="39" height="37"/>
+                            </pageControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Cpc-ok-HtI" firstAttribute="centerX" secondItem="2lw-aw-kkG" secondAttribute="centerX" constant="0.5" id="EyY-0K-K8q"/>
+                            <constraint firstItem="Cpc-ok-HtI" firstAttribute="centerY" secondItem="2lw-aw-kkG" secondAttribute="centerY" constant="120.5" id="ig5-zJ-YI0"/>
+                            <constraint firstItem="2lw-aw-kkG" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="130" id="ioy-mJ-5XO"/>
+                            <constraint firstItem="2lw-aw-kkG" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="s6j-bN-K22"/>
+                            <constraint firstAttribute="centerX" secondItem="2lw-aw-kkG" secondAttribute="centerX" id="xno-99-TVi"/>
+                            <constraint firstItem="2lw-aw-kkG" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="ydm-nZ-keV"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pageIndicator" destination="Cpc-ok-HtI" id="yLk-Sc-vWK"/>
+                        <outlet property="sliderMainScroller" destination="2lw-aw-kkG" id="qOK-wM-K8o"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
