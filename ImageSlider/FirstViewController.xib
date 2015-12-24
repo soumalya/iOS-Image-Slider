@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FirstViewController">
+            <connections>
+                <outlet property="autoPlayToggle" destination="1gN-wo-TI1" id="wc3-xt-KXs"/>
+                <outlet property="sampleImageView" destination="f6M-I3-ktM" id="BQh-FB-rXC"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Auto-Play Enabled" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yIq-vE-kyh">
+                    <rect key="frame" x="20" y="549" width="155" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="155" id="4en-hS-2dY"/>
+                        <constraint firstAttribute="height" constant="21" id="6GJ-QV-eAh"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1gN-wo-TI1">
+                    <rect key="frame" x="202" y="544" width="51" height="31"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="49" id="iWt-xe-0JA"/>
+                        <constraint firstAttribute="height" constant="31" id="q0N-gS-pTF"/>
+                    </constraints>
+                    <connections>
+                        <action selector="toggleAutoPlay:" destination="-1" eventType="valueChanged" id="7qR-nX-O0x"/>
+                    </connections>
+                </switch>
+                <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Black-Car-HD-Wallpaper.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="f6M-I3-ktM">
+                    <rect key="frame" x="280" y="544" width="76" height="48"/>
+                    <gestureRecognizers/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="76" id="Usf-vp-7e9">
+                            <variation key="heightClass=regular-widthClass=regular" constant="147"/>
+                        </constraint>
+                        <constraint firstAttribute="height" constant="48" id="hVm-zB-gFb">
+                            <variation key="heightClass=regular-widthClass=regular" constant="81"/>
+                        </constraint>
+                    </constraints>
+                    <variation key="heightClass=regular-widthClass=regular">
+                        <mask key="constraints">
+                            <include reference="Usf-vp-7e9"/>
+                            <include reference="hVm-zB-gFb"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="Dge-FH-USa" appends="YES" id="3IO-Nx-2bk"/>
+                    </connections>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="f6M-I3-ktM" secondAttribute="trailing" constant="8" id="5wq-Ls-G5T"/>
+                <constraint firstAttribute="bottom" secondItem="yIq-vE-kyh" secondAttribute="bottom" constant="30" id="82j-3d-Fpw"/>
+                <constraint firstItem="1gN-wo-TI1" firstAttribute="leading" secondItem="yIq-vE-kyh" secondAttribute="trailing" constant="27" id="U6J-Xb-iMV"/>
+                <constraint firstItem="f6M-I3-ktM" firstAttribute="leading" secondItem="1gN-wo-TI1" secondAttribute="trailing" constant="29" id="byf-Fu-tLZ"/>
+                <constraint firstItem="yIq-vE-kyh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="dvF-5r-CoO"/>
+                <constraint firstItem="1gN-wo-TI1" firstAttribute="centerY" secondItem="yIq-vE-kyh" secondAttribute="centerY" id="gjX-ZX-ZEP"/>
+                <constraint firstAttribute="bottom" secondItem="f6M-I3-ktM" secondAttribute="bottom" constant="8" id="iHD-wE-6bS"/>
+                <constraint firstAttribute="bottom" secondItem="f6M-I3-ktM" secondAttribute="bottom" constant="8" id="vEh-gB-SNd"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="5wq-Ls-G5T"/>
+                    <exclude reference="iHD-wE-6bS"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=regular">
+                <mask key="subviews">
+                    <include reference="f6M-I3-ktM"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="5wq-Ls-G5T"/>
+                    <include reference="byf-Fu-tLZ"/>
+                    <exclude reference="iHD-wE-6bS"/>
+                    <include reference="vEh-gB-SNd"/>
+                </mask>
+            </variation>
+        </view>
+        <tapGestureRecognizer id="Dge-FH-USa">
+            <connections>
+                <action selector="tappedOnSampleImage:" destination="-1" id="AeP-80-chD"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="Black-Car-HD-Wallpaper.jpg" width="1920" height="1200"/>
+    </resources>
+</document>

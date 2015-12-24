@@ -75,6 +75,12 @@
             imageV.image = [UIImage imageNamed:(NSString *)[imagesArray objectAtIndex:i]];
             [_sliderMainScroller addSubview:imageV];
             imageV.clipsToBounds = YES;
+            imageV.userInteractionEnabled = YES;
+            
+            UITapGestureRecognizer *tapOnImage = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapOnImage:)];
+            tapOnImage.delegate = self;
+            tapOnImage.numberOfTapsRequired = 1;
+            [imageV addGestureRecognizer:tapOnImage];
             
             mainCount++;
         }
@@ -87,6 +93,18 @@
     if (([imagesArray count] > 1) && (isAutoScrollEnabled)) {
         [self startTimerThread];
     }
+}
+
+#pragma mark end -
+
+
+#pragma mark - GestureRecognizer delegate
+
+- (void)tapOnImage:(UITapGestureRecognizer *)gesture {
+    
+    UIImageView *targetView = (UIImageView *)gesture.view;
+    [_delegate sbslider:self didTapOnImage:targetView.image andParentView:targetView];
+    
 }
 
 #pragma mark end -
@@ -176,7 +194,28 @@
 
 -(void)startTimerThread
 {
+    if (activeTimer) {
+        [activeTimer invalidate];
+        activeTimer = nil;
+    }
     activeTimer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(slideImage) userInfo:nil repeats:YES];
+}
+
+-(void)startAutoPlay
+{
+    autoSrcollEnabled = YES;
+    if (([imagesArray count] > 1) && (autoSrcollEnabled)) {
+        [self startTimerThread];
+    }
+}
+
+-(void)stopAutoPlay
+{
+    autoSrcollEnabled = NO;
+    if (activeTimer) {
+        [activeTimer invalidate];
+        activeTimer = nil;
+    }
 }
 
 @end
